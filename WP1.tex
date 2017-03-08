@@ -16,81 +16,39 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass{beamer}
+  %Blocks
+
 
 \mode<presentation> {
 
-% The Beamer class comes with a number of default slide themes
-% which change the colors and layouts of slides. Below this is a list
-% of all the themes, uncomment each in turn to see what they look like.
 
-%\usetheme{default}
-%\usetheme{AnnArbor}
-%\usetheme{Antibes}
-%\usetheme{Bergen}
-%\usetheme{Berkeley}
-%\usetheme{Berlin}
-%\usetheme{Boadilla}
-\usetheme{CambridgeUS}
-%\usetheme{Copenhagen}
-%\usetheme{Darmstadt}
-%\usetheme{Dresden}
-%\usetheme{Frankfurt}
-%\usetheme{Goettingen}
-%\usetheme{Hannover}
-%\usetheme{Ilmenau}
-%\usetheme{JuanLesPins}
-%\usetheme{Luebeck}
-%\usetheme{Madrid}
-%\usetheme{Malmoe}
-%\usetheme{Marburg}
-%\usetheme{Montpellier}
-%\usetheme{PaloAlto}
-%\usetheme{Pittsburgh}
-%\usetheme{Rochester}
-%\usetheme{Singapore}
-%\usetheme{Szeged}
-%\usetheme{Warsaw}
-
-% As well as themes, the Beamer class has a number of color themes
-% for any slide theme. Uncomment each of these in turn to see how it
-% changes the colors of your current slide theme.
-
-%\usecolortheme{albatross}
-%\usecolortheme{beaver}
-%\usecolortheme{beetle}
-%\usecolortheme{crane}
-%\usecolortheme{dolphin}
-%\usecolortheme{dove}
-%\usecolortheme{fly}
-%\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
-%\usecolortheme{seagull}
-%\usecolortheme{seahorse}
-%\usecolortheme{whale}
-%\usecolortheme{wolverine}
+%\usetheme{CambridgeUS}
+\useinnertheme{default}
+\useoutertheme{infolines}
 
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
-
-%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 
 %%% Colors
 
 \definecolor{hbrsblue}{RGB}{11,161,226}
 
-\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=hbrsblue}
+\setbeamercolor{palette tertiary}{use=structure,bg=white,fg=hbrsblue}
 
   %% Title
-  \setbeamercolor{title}{fg=white, bg=hbrsblue}
+  \setbeamercolor{title}{bg=white, fg=hbrsblue}
   %\setbeamercolor{title}{fg=hbrsblue}
   \setbeamercolor{frametitle}{fg=hbrsblue}
   \setbeamercolor{date}{fg=hbrsblue}
   \setbeamercolor{title in head/foot}{fg=hbrsblue}
   \setbeamercolor{date in head/foot}{fg=hbrsblue}
+  \setbeamercolor{caption name}{fg=hbrsblue}
+  \setbeamercolor{section in toc}{fg=hbrsblue}
 
   %% Figures, captions and bullets
   \setbeamertemplate{caption}[numbered]
+  \setbeamertemplate{section in toc}[sections numbered]
+  \setbeamertemplate{subsection in toc}[subsections numbered]
   
   %%Items, footnotes and links
   \setbeamercolor*{item}{fg=hbrsblue}
@@ -108,6 +66,9 @@
     fg=hbrsblue, bg=gray!20!white}
 
   %% Fonts
+  \usefonttheme{professionalfonts}
+  \usepackage{fontspec}
+  %\setmainfont{TeX Gyre Heros}
   \setbeamerfont{normal text}{size=\normalsize}
   \setbeamerfont{title}{size=\LARGE, series=\bfseries}
   \setbeamerfont{subtitle}{parent=normal text, size=\Large}
@@ -115,11 +76,57 @@
   \setbeamerfont{framesubtitle}{size=\large, shape=\itshape}
   \setbeamerfont{description item}{series=\bfseries}
   \setbeamerfont{author}{size=\large}
+  \setbeamerfont{caption}{size=\scriptsize}
+  \setbeamerfont{section in toc}{size=\normalsize}
+  \setbeamerfont{subsection in toc}{size=\small}
   
-  %% Bullets
-  \setbeamertemplate{itemize items}[default]
+  
+  % Bullets
+  \setbeamertemplate{itemize item}{$\bullet$}
+  \setbeamertemplate{itemize subitem}{\---}
+  \setbeamertemplate{itemize subsubitem}{\guillemotright}
+  \setbeamertemplate{enumerate items}[default]
+  %\setbeamertemplate{bibliography item}{\insertbiblabel}
+  
 
-
+  % Blocks 
+  %\setbeamertemplate{blocks}[rounded=false, shadow=false]
+  
+  %Adding logo to footer
+  \setbeamertemplate{navigation symbols}{}
+ %\addtobeamertemplate{footline}{
+  \setbeamertemplate{footline}{
+  \leavevmode%
+	\hbox{\hspace{1em}\includegraphics[height=0.45cm]{images/Logo-HBRS-cyan.png}\hspace{5em} 
+    %\begin{minipage}[c][2cm]
+    Dept. of Computer Science
+    %\end{minipage} 
+    }\hspace{5em}
+	\hbox{
+    \usebeamerfont{author in head/foot}\insertshortauthor \hspace{5em}
+	\usebeamerfont{title in head/foot}\insertshorttitle\hspace{3em} 
+ 	}%
+    \hfill
+   \hbox{
+   \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+   }
+   \vbox{
+   \hfill
+   \usebeamercolor[fg]{navigation symbols}\insertslidenavigationsymbol%
+	\insertframenavigationsymbol%
+	\insertsubsectionnavigationsymbol%
+	\insertsectionnavigationsymbol%
+	\insertdocnavigationsymbol%
+	\insertbackfindforwardnavigationsymbol%
+   }
+ 
+ }{}
+ %\setbeamertemplate{footline}{
+ %}
+ %\setbeamertemplate{navigation symbols}[default]
+\setbeamercolor{navigation symbols}{use=hbrsblue,fg=hbrsblue!80!bg}
+\setbeamercolor{navigation symbols dimmed}{use=hbrsblue,fg=hbrsblue!60!bg}
+ 
 }
 
 \usepackage{graphicx} % Allows including images
@@ -131,15 +138,17 @@
 %----------------------------------------------------------------------------------------
 
 \title[R\&D Projects]{R\&D Projects} % The short title appears at the bottom of every slide, the full title is only on the title page
-
+%\logo{\includegraphics[height=0.45cm]{images/Logo-HBRS-cyan.png}}
 %\author[Prassler, Ortega, Sch{\"o}bel]{Prof. Dr. Erwin Prassler\\ Argentina Ortega S{\'a}inz\\ Maximilian Sch{\"o}bel} % Your name
-%\institute[BRSU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-%{
+\author[Ortega]{Argentina Ortega S\'ainz}
+\institute[BRSU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{\includegraphics[height=.75cm]{images/Logo-HBRS-cyan.png}
 %Bonn-Rhein-Sieg University of Applied Science \\ % Your institution for the title page
 %\medskip
 %\textit{\textless erwin.prassler, argentina.ortega, maximilian.schoebel\textgreater @h-brs.de} % Your email address
-%}
+}
 \date{April 12, 2017} % Date, can be changed to a custom date
+%\logo{Test}
 
 \begin{document}
 
@@ -156,15 +165,9 @@
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
-
-%------------------------------------------------
-% \section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
-%------------------------------------------------
-
-% \subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
-\section{Test}
-    \subsection{Structuring Elements}
-    \begin{frame}[label=simmonshall]{Text blocks}
+ \section{Some tests}
+ \subsection{Blocks}
+ \begin{frame}[label=simmonshall]{Text blocks}
       \framesubtitle{In plain, example, and \alert{alert} flavour}
       \alert{This text} is highlighted.
 
@@ -178,6 +181,13 @@
         This is an alert block containing some \alert{highlighted text}.
       \end{alertblock}
     \end{frame}
+
+%------------------------------------------------
+% \section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+% \subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
 %--------------------------------------------------------------
 %\section{ROPOD}
 %--------------------------------------------------------------
@@ -198,6 +208,9 @@
     \begin{itemize}
     \item 
     \end{itemize}
+    \begin{enumerate}
+    \item test
+    \end{enumerate}
 %, slow down or speed up based on employee performance, route high value items to more experienced workers, etc.
 \end{itemize}
 
@@ -205,7 +218,7 @@
 \column{.35\textwidth}
 \begin{figure}
 \centering
-        \includegraphics[width=.8\textwidth]{images/Amazon.png}
+        %\includegraphics[width=.8\textwidth]{images/Amazon.png}
         \caption{Amazon multi-agent architecture. \tiny{Original in \cite{Wurman2014}}.}
 \end{figure}
 
