@@ -1,7 +1,7 @@
 \documentclass{beamer}
 
 
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -14,27 +14,29 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{dsfont}
-\usepackage{url}       % `\url`s
+\usepackage{url}       % `\url
 \usepackage{listings}  % Code listings
 
-\usepackage[
-  main=english, %% By using `czech` or `slovak` as the main locale
+\usepackage{theme/beamerthemehbrs}
+%\usepackage{preamble}
+
+\definecolor{hbrs-blue}{RGB}{11,161,226}
+
+%\usepackage[
+%  main=english, %% By using `czech` or `slovak` as the main locale
                 %% instead of `english`, you can typeset the
                 %% presentation in either Czech or Slovak,
                 %% respectively.
-  czech, slovak %% The additional keys allow foreign texts to be
-]{babel} 
+%  czech, slovak %% The additional keys allow foreign texts to be
+%]{babel}
 
 \author[Name]{First Name}
 \title{Title of presentation}
 \subtitle{Subtitle of presentation}
-%\logo{} 
-\institute[HBRS]{Hochschule Bonn-Rein-Sieg} 
-\date{\today} 
-\subject{Test beamer} 
-
-\usetheme{hbrs}
-
+%\logo{}
+\institute[HBRS]{Hochschule Bonn-Rein-Sieg}
+\date{\today}
+\subject{Test beamer}
 
 \begin{document}
 {
@@ -99,7 +101,7 @@
       \end{columns}
       \bigskip
       \justifying
-	
+
       {\uselanguage{czech}Nechť již hříšné saxofony ďáblů
       rozzvučí síň úděsnými tóny waltzu, tanga a quickstepu!}
       {\uselanguage{slovak} Nezvyčajné kŕdle šťastných figliarskych
@@ -352,19 +354,19 @@
               Vol. 26, No. 1., pp. 68-73.
       \end{thebibliography}
     \end{frame}
- 
+
 
 \section{Something else}
 
-\begin{frame} 
-\frametitle{There Is No Largest Prime Number} 
-\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+\begin{frame}
+\frametitle{There Is No Largest Prime Number}
+\framesubtitle{The proof uses \textit{reductio ad absurdum}.}
 \begin{theorem}
-There is no largest prime number. \end{theorem} 
-\begin{enumerate} 
-\item<1-| alert@1> Suppose $p$ were the largest prime number. 
-\item<2-> Let $q$ be the product of the first $p$ numbers. 
-\item<3-> Then $q+1$ is not divisible by any of them. 
+There is no largest prime number. \end{theorem}
+\begin{enumerate}
+\item<1-| alert@1> Suppose $p$ were the largest prime number.
+\item<2-> Let $q$ be the product of the first $p$ numbers.
+\item<3-> Then $q+1$ is not divisible by any of them.
 \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
 number not in the first $p$ numbers.
 \end{enumerate}
