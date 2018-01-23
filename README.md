@@ -1,0 +1,1 @@
+# HBRS beamer template
