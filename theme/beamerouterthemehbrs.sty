@@ -9,22 +9,11 @@
 \newlength{\extrapadding}
 \extrapadding=1.75mm
 
-% Header
-\defbeamertemplate*{headline}{hbrs}{
- \ifnum\c@framenumber=0\else%
-\leavevmode%
-	%\begin{tikzpicture}
-    %\node[anchor=north west,yshift=\extrapadding, xshift=\extrapadding] at (current page.north west){
-  	%	\includegraphics[height=0.45cm]{theme/images/Logo-HBRS-cyan.png}
-  	%	};
-	%\node[anchor=north east,yshift=\extrapadding, xshift=-\extrapadding] at (current page.north east){
-	%\usebeamerfont{subtitle in head/foot}Fachbereich Informatik
-  	%	};
-	%\end{tikzpicture}%
-\fi%
-}
 
-% Title Frame
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Title Frame
+%%%%%%%%%%%%%%%%%%%%%%%%
+
 \defbeamertemplate*{title page}{hbrs}{%
 	\setcounter{framenumber}{0} %Set title frame counter to 0
 
@@ -47,17 +36,6 @@
     \vskip-.5\baselineskip
 
 
-    % Input the dashed line
-    %\begin{pgfpicture}
-    % \pgfsetlinewidth{2pt}
-    %  \pgfsetroundcap
-    %  \pgfsetdash{{0pt}{4pt}}{0cm}
-
-    %  \pgfpathmoveto{\pgfpoint{0mm}{0mm}}
-    %  \pgfpathlineto{\pgfpoint{\textwidth}{0mm}}
-
-    %  \pgfusepath{stroke}
-    %\end{pgfpicture}
     \vfill
 
     % Input the subtitle
@@ -88,19 +66,28 @@
 }%
 
 
-%Adding logo to footer
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Header
+%%%%%%%%%%%%%%%%%%%%%%%
+\defbeamertemplate*{headline}{hbrs}{
+ \ifnum\c@framenumber=0\else%
+\leavevmode%
+
+\fi%
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 
 \defbeamertemplate*{footline}{hbrs}{
  \ifnum\c@framenumber=0\else%
  \leavevmode%
   	\begin{tikzpicture}[overlay]
-  	%	\node[anchor=south west,yshift=\extrapadding, xshift=\extrapadding] at (current page.south west){
-  	%	\includegraphics[height=0.45cm]{images/Logo-HBRS-cyan.png}
-	%\usebeamerfont{title in head/foot}\insertshorttitle
-	%};
     \node[anchor=south west,yshift=\extrapadding, xshift=2\extrapadding] at (current page.south west){
-    %\node[anchor=south west] at (current page.south west){
 	\includegraphics[height=0.45cm]{theme/images/Logo-HBRS-cyan.png}
 	};
 
@@ -109,26 +96,20 @@
     };
 
     \node[anchor=south east,  yshift=\extrapadding, xshift=-\extrapadding] at (current page.south east) {
-    %\node[anchor=south east] at (current page.south east) {
         \usebeamerfont{title in head/foot}\insertshorttitle~ -
         \usebeamerfont{author in head/foot}\textbf{\insertshortauthor}\hspace*{2em}
         \usebeamercolor[fg]{framenumber}%
         \usebeamerfont{framenumber}%
-		%\usebeamerfont{date in head/foot}\insertshortdate\hspace*{2em}
         \insertframenumber/\inserttotalframenumber
         };
-        %\node[anchor=south, yshift=\extrapadding] at (current page.south){
-        %\node[anchor=south] at (current page.south){
-        %\usebeamerfont{author in head/foot}\insertshortauthor
-        %};
-  	\end{tikzpicture}
-
-%   \vbox{
-%   	\hfill
+    \end{tikzpicture}
 \fi
  }{}
 
-% Frame title
+%%%%%%%%%%%%%%%%%%%%%
+%% Frame title
+%%%%%%%%%%%%%%%%%%%%%
+
 \defbeamertemplate*{frametitle}{hbrs}[1	][]{%
 	\vskip-1em % Align the text with the top border
 	\vskip 4\extrapadding
