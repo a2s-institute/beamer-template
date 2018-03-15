@@ -17,14 +17,33 @@
 \defbeamertemplate*{title page}{hbrs}{%
 	\setcounter{framenumber}{0} %Set title frame counter to 0
 
-  	\begin{tikzpicture}
-  		\node[anchor=south west,yshift=\extrapadding, xshift=\extrapadding] at (current page.south west){
-  		\includegraphics[height=1cm]{theme/images/Logo-HBRS-cyan.png}
-	};
-        \node[anchor=south east,yshift=\extrapadding, xshift=-10\extrapadding] at (current page.south east){
-        \includegraphics[height=1cm]{theme/images/b-it.pdf}
-    };
-	\end{tikzpicture}
+
+    \ifx\@thirdpartylogo\@empty
+        \begin{tikzpicture}
+      		\node[anchor=south west,yshift=\extrapadding, xshift=\extrapadding] at (current page.south west){
+      		\includegraphics[height=1cm]{theme/images/Logo-HBRS-cyan.png}
+    	};
+            \node[anchor=south east,yshift=\extrapadding, xshift=-10\extrapadding] at (current page.south east){
+            \includegraphics[height=1cm]{theme/images/b-it.pdf}
+        };
+    	\end{tikzpicture}
+    \else
+
+        \begin{tikzpicture}
+            \node[anchor=south west,yshift=\extrapadding, xshift=\extrapadding] at (current page.south west){
+                \includegraphics[height=.7cm]{theme/images/Logo-HBRS-cyan.png}
+            };
+            \node[anchor=south east,yshift=\extrapadding, xshift=-10\extrapadding] at (current page.south east){
+                \includegraphics[height=.7cm]{theme/images/b-it.pdf}
+            };
+            \node[anchor=south east,yshift=\extrapadding, xshift=-30\extrapadding] at (current page.south east){
+                \includegraphics[height=.7cm]{\@thirdpartylogo}
+            };
+    	\end{tikzpicture}
+
+    \fi%
+
+
 
     % Input the title
     \usebeamerfont{title}%
@@ -95,6 +114,18 @@
         \includegraphics[height=0.45cm]{theme/images/b-it.pdf}
     };
 
+    \ifx\@thirdpartylogo\@empty
+        \relax
+    \else
+        % If you have added a third party logo, you might need to adjust its position
+        % change the xshift value to something that suits your needs
+        \node[anchor=south west,yshift=\extrapadding, xshift=32\extrapadding] at (current page.south west){
+            \includegraphics[height=0.45cm]{\@thirdpartylogo}
+        };
+    \fi%
+
+
+
     \node[anchor=south east,  yshift=\extrapadding, xshift=-\extrapadding] at (current page.south east) {
         \usebeamerfont{title in head/foot}\insertshorttitle~ -
         \usebeamerfont{author in head/foot}\textbf{\insertshortauthor}\hspace*{2em}
@@ -102,6 +133,10 @@
         \usebeamerfont{framenumber}%
         \insertframenumber/\inserttotalframenumber
         };
+
+
+
+
     \end{tikzpicture}
 \fi
  }{}
