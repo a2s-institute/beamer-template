@@ -1,5 +1,6 @@
 # HBRS beamer template
 
+[![Build Status](https://travis-ci.org/mas-group/beamer-template.svg?branch=master)](https://travis-ci.org/mas-group/beamer-template)
 
 You can add a third party logo by using the command `\thirdpartylogo{path/to/your/image}`.
 
