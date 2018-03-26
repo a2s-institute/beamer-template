@@ -158,5 +158,18 @@
 }%
 
 
+% Formatting for allowframebrakes
+\newcounter{cont}
+\makeatletter
+\setbeamertemplate{frametitle continuation}{%
+    \setcounter{cont}{\beamer@endpageofframe}%
+    \addtocounter{cont}{1}%
+    \addtocounter{cont}{-\beamer@startpageofframe}%
+    (\insertcontinuationcount/\arabic{cont})%
+}
+\makeatletter
+
+
+
 \mode<all>
 \endinput
