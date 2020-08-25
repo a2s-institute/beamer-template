@@ -82,6 +82,21 @@
       \insertauthor%
     \end{minipage}
 
+	\ifx\advisors\empty
+	{}
+	\else
+	{
+		\vfill
+		\begin{minipage}{\textwidth}
+			\raggedright
+			{\small%
+				\textit{Advisors}
+
+				\advisors
+			}%
+	    \end{minipage}
+	}
+	\fi
 }%
 
 
