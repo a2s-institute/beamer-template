@@ -115,6 +115,7 @@
 %% Footer
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\patchcmd{\beamer@calculateheadfoot}{\advance\footheight by 4pt}{\advance\footheight by 5ex}{}{}
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 
 \defbeamertemplate*{footline}{hbrs}{
